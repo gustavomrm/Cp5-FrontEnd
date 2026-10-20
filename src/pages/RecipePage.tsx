@@ -19,7 +19,6 @@ export function RecipePage() {
 
     getRecipeById(Number(id))
       .then((data) => active && setRecipe(data))
-      // id que não existe (ex: 999) cai aqui, a API responde 404
       .catch(() => active && setNotFound(true))
       .finally(() => active && setLoading(false))
 

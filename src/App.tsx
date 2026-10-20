@@ -4,7 +4,6 @@ import { MainLayout } from '@/layouts/MainLayout'
 import { CatalogPage } from '@/pages/CatalogPage'
 import { NotFoundPage } from '@/pages/NotFoundPage'
 
-// página de detalhe carregada só quando precisa
 const RecipePage = lazy(() =>
   import('@/pages/RecipePage').then((module) => ({ default: module.RecipePage })),
 )
@@ -16,8 +15,6 @@ export default function App() {
         <Route element={<MainLayout />}>
           <Route index element={<CatalogPage />} />
           <Route path="receitas/:id" element={<RecipePage />} />
-
-          {/* Catch-all: qualquer URL que não bateu com as rotas acima */}
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
