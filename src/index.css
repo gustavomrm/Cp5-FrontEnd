@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* Identidade visual do Receitário: cada variável vira uma classe */
+@theme {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+/* Estilos globais: valem para a aplicação inteira */
+@layer base {
+  body {
+    @apply bg-stone-50 text-neutral-900 font-sans antialiased;
+  }
+
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  /* Superfície branca com borda: cards e detalhe da receita */
+  .card {
+    @apply rounded-xl border border-stone-200 bg-white;
+  }
+
+  /* Botão principal: links de ação como "Voltar ao catálogo" */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-full bg-orange-600 px-4 py-2
+      text-sm font-medium text-white transition hover:bg-orange-700
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2
+      disabled:opacity-60;
+  }
+
+  /* Campos de formulário: busca e select de culinária */
+  .field {
+    @apply rounded-full border border-stone-300 bg-white px-3 py-1.5 text-sm
+      focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500;
+  }
+}
