@@ -10,7 +10,6 @@ export function CatalogPage() {
   const [cuisine, setCuisine] = useState('all')
   const [favorites, setFavorites] = useState<number[]>([])
 
-  // lista de culinárias vem da própria API
   const cuisines = useMemo(
     () => ['all', ...new Set(recipes.map((recipe) => recipe.cuisine))],
     [recipes],

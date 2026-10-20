@@ -17,7 +17,6 @@ export interface Recipe {
   mealType: string[]
 }
 
-// a lista vem dentro de um objeto, não como array direto
 export interface RecipesResponse {
   recipes: Recipe[]
   total: number
