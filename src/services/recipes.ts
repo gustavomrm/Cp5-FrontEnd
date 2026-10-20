@@ -10,3 +10,10 @@ export async function getRecipes(): Promise<Recipe[]> {
   const data: RecipesResponse = await response.json()
   return data.recipes
 }
+
+export async function getRecipeById(id: number): Promise<Recipe> {
+  const response = await fetch(`${BASE_URL}/${id}`)
+  if (!response.ok) throw new Error('Receita não encontrada')
+
+  return response.json()
+}
