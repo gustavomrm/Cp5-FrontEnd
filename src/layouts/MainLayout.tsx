@@ -16,7 +16,6 @@ export function MainLayout() {
         <ErrorBoundary
           FallbackComponent={ErrorFallback}
           onError={(error, info) => console.error('ErrorBoundary capturou:', error, info)}
-          // Mudou a URL? O erro é limpo e a nova página renderiza normalmente
           resetKeys={[location.pathname]}
         >
           <Suspense
